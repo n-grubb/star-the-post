@@ -3,7 +3,7 @@
 Plugin Name: Star the Post
 Description: Add "starring" functionality to the Seth Godin blog
 Author: Noah Grubb
-Version: 0.0.1
+Version: 1.0.1
 */
 
 // set version number
