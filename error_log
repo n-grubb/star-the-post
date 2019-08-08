@@ -1,0 +1,2 @@
+[05-Jun-2018 16:03:03 UTC] PHP Warning:  Unexpected character in input:  ' in /home/sethgodi/public_html/wp-content/plugins/star-the-post/.star-the-post.php.swp on line 17
+[05-Jun-2018 16:03:03 UTC] PHP Parse error:  syntax error, unexpected 'ad' (T_STRING) in /home/sethgodi/public_html/wp-content/plugins/star-the-post/.star-the-post.php.swp on line 17

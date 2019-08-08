@@ -1,0 +1,169 @@
+@keyframes bounce {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes color-throb {
+  0% {
+    fill: #000;
+  }
+  50% {
+    fill: #ffb902;
+  }
+  100% {
+    fill: #000;
+  }
+}
+
+.post-footer {
+  overflow: visible;
+  min-height: 40px;
+}
+
+#star-the-post {
+  margin-left: 10px;
+}
+
+#star-the-post::-moz-selection {
+  background-color: Transparent;
+  color: #000;
+}
+#star-the-post::selection {
+  background-color: Transparent;
+  color: #000;
+}
+
+.stp {
+  position: relative;
+  max-width: 40%;
+  float: left;
+}
+
+i.stp--icon {
+  background-image: url('../img/star_default.svg');
+  background-size: cover;
+  display: inline-block;
+  min-width: 30px;
+  min-height: 30px;
+  cursor: pointer;
+}
+i.stp--icon:hover {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+i.stp--outline {
+  position: absolute;
+  background-image: url('../img/star_pop.svg');
+  background-size: cover;
+  min-width: 50px;
+  min-height: 50px;
+  left: -10px;
+  top: -10px;
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
+i.stp--icon.pop {
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+i.stp--outline.pop {
+  display: block;
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-delay: 250ms;
+}
+
+.stp--count {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+  margin-left: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: #fbb73e;
+  color: black;
+}
+
+ul.social-icons.throb svg path {
+  animation-name: color-throb;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.js-copy-url,
+#searchlink {
+  position: relative;
+}
+.js-copy-url:before,
+#searchlink:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 9998;
+  top: -8px;
+  left: 6px;
+  width: 0;
+  height: 0;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0, 0, 0, 0.72);
+  visibility: hidden;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.js-copy-url:after,
+#searchlink:after {
+  content: 'Link Copied';
+  font-family: 'Source Sans Pro', sans-serif;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  top: -38px;
+  left: -40px;
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.72);
+  border-radius: 3px;
+  visibility: hidden;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.js-copy-url.copied:before,
+.js-copy-url.copied:after,
+#searchlink.copied:before,
+#searchlink.copied:after {
+  visibility: visible;
+  opacity: 1;
+}
